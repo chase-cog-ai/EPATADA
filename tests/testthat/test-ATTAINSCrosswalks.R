@@ -9,7 +9,7 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
     auto_assign = "None",
     excel = FALSE
   )
-
+  
   suppressWarnings(
     use_param_ref_none <- TADA_UsesForAnalysis(
       test_dat,
@@ -31,7 +31,7 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
       length(unique(test_dat$TADA.ComparableDataIdentifier))
     )
   )
-
+  
   suppressWarnings(
     use_param_ref_none2 <- TADA_UsesForAnalysis(
       test_dat,
@@ -42,7 +42,7 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
       excel = FALSE
     )
   )
-
+  
   # A user supplied table when paramRef has no crosswalk should return 0 rows (empty data frame).
   # Check to make sure there are 7 columns, 0 rows
   testthat::expect_true(
@@ -58,7 +58,7 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
     auto_assign = "All",
     excel = FALSE
   )
-
+  
   suppressWarnings(
     use_param_ref_all <- TADA_UsesForAnalysis(
       test_dat,
@@ -68,7 +68,7 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
       excel = FALSE
     )
   )
-
+  
   # a user supplied table for a param_use will not populate TADA_UsesForAnalysis if paramRef crosswalk is left blank.
   user.supplied.uses.param <- data.frame(
     ATTAINS.OrganizationIdentifier = rep(
@@ -81,7 +81,7 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
       length(unique(param_ref_all$ATTAINS.ParameterName))
     )
   )
-
+  
   suppressWarnings(
     use_param_ref_all2 <- TADA_UsesForAnalysis(
       test_dat,
@@ -92,7 +92,7 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
       excel = FALSE
     )
   )
-
+  
   # A user supplied table when paramRef is filled out when auto_assign = FALSE
   # should all reflect the user supplied crosswalk. Check all unique uses to make sure.
   # Check to make sure there are 7 columns, 0 rows
@@ -111,13 +111,13 @@ testthat::test_that("TADA_ParametersForAnalysis ", {
     auto_assign = "Org",
     excel = FALSE
   )
-
+  
   # check to make sure all rows contain all unique ComparableDataIdentifiers in the TADA data frame
   testthat::expect_true(
     length(unique(test_dat$TADA.ComparableDataIdentifier)) ==
       length(unique(param_ref_none$TADA.ComparableDataIdentifier)) &&
       length(unique(param_ref_all$TADA.ComparableDataIdentifier)) ==
-        length(unique(param_ref_none$TADA.ComparableDataIdentifier))
+      length(unique(param_ref_none$TADA.ComparableDataIdentifier))
   )
 })
 
@@ -134,7 +134,7 @@ testthat::test_that("TADA_DefineCriteriaMethodology ", {
       # excel = TRUE, overwrite = TRUE
     )
   )
-
+  
   suppressWarnings(
     Criteria_autofill_w_uniqueID <- TADA_DefineCriteriaMethodology(
       test_dat,
@@ -153,6 +153,6 @@ testthat::test_that("TADA_DefineCriteriaMethodology ", {
         Criteria_autofill_w_uniqueID$TADA.ComparableDataIdentifier
       )) &&
       length(unique(test_dat$TADA.CharacteristicName)) ==
-        length(unique(Criteria_autofill$TADA.CharacteristicName))
+      length(unique(Criteria_autofill$TADA.CharacteristicName))
   )
 })

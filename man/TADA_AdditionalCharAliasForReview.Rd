@@ -14,35 +14,35 @@ TADA_AdditionalCharAliasForReview(
 )
 }
 \arguments{
-\item{includeCST}{a Boolean value. If TRUE, this will include columns
+\item{includeCST}{A Boolean value. If TRUE, this will include columns
 for CST pollutant Name if it contains an alias between any 3 sources.}
 
-\item{displayPercent}{a Boolean value. If True, this will display the percent
+\item{displayPercent}{A Boolean value. If TRUE, this will display the percent
 match in number of words between the WQX characteristic, ATTAINS parameter
 and CST pollutant names.}
 
-\item{ATTAINS.CST.tolerance}{a numeric value ranging from 0 to 1 (0\% to 100\%).
+\item{ATTAINS.CST.tolerance}{A numeric value ranging from 0 to 1 (0\% to 100\%).
 Default is 100\%. This value is an OR condition with CST.ATTAINS.tolerance which
 defines the minimum percentage of the number of words that must be found in an
 ATTAINS parameter to a CST pollutant name for it to be considered an alias match.}
 
-\item{CST.ATTAINS.tolerance}{a numeric value ranging from 0 to 1 (0\% to 100\%).
+\item{CST.ATTAINS.tolerance}{A numeric value ranging from 0 to 1 (0\% to 100\%).
 Default is 100\%. This value is an OR condition with ATTAINS.CST.tolerance which
 defines the minimum percentage of the number of words that must be found in a
-CST pollutant name to an ATTAINS parameter to for it to be considered an alias match.}
+CST pollutant name to an ATTAINS parameter for it to be considered an alias match.}
 
-\item{ATTAINS.WQX.tolerance}{a numeric value ranging from 0 to 1 (0\% to 100\%).
+\item{ATTAINS.WQX.tolerance}{A numeric value ranging from 0 to 1 (0\% to 100\%).
 Default is 100\%. This value is an OR condition with ATTAINS.WQX.tolerance which
 defines the minimum percentage of the number of words that must be found in an
 ATTAINS parameter to a WQX characteristic name for it to be considered an alias match.}
 
-\item{WQX.ATTAINS.tolerance}{a numeric value ranging from 0 to 1 (0\% to 100\%).
+\item{WQX.ATTAINS.tolerance}{A numeric value ranging from 0 to 1 (0\% to 100\%).
 Default is 100\%. This value is an OR condition with ATTAINS.WQX.tolerance which
 defines the minimum percentage of the number of words that must be found in a
-WQX characteristic name to an ATTAINS parameter to for it to be considered an alias match.}
+WQX characteristic name to an ATTAINS parameter for it to be considered an alias match.}
 }
 \value{
-a data frame consisting of potential additional ATTAINS.ParameterName
+A data frame consisting of potential additional ATTAINS.ParameterName
 to WQX.CharacteristicName alias for review. TADA team will review and
 decide if these are appropriate aliases.
 }
@@ -59,7 +59,7 @@ WQX Characteristic Alias table.
 }
 \details{
 Note for Development: We should keep a reference file to indicate
-which rows have already been reviewed during this process.In addition,
+which rows have already been reviewed during this process. In addition,
 we can modify the 'strictness' of percent matches. Being more strict
 can result in less potential match (false negatives) findings while
 less strict may result in greater number of matches that shouldn't
